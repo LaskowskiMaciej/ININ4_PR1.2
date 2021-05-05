@@ -23,8 +23,8 @@ public class Main {
         Human me = new Human();
         me.mobilePhone = iphone;
         me.pet = dog;
-        me.car = new Car("B4", "Volkswagen","Passat",1997,"black");
-
+        Car Passat = new Car("B4", "Volkswagen","Passat",1997,"black");
+        me.car = Passat;
         /*
         typy proste nie są obiektami żadnej klasy
         int i;
