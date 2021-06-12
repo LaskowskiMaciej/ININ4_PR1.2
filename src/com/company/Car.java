@@ -1,18 +1,22 @@
 package com.company;
 
 public class Car {
-    final String model;
-    final String producer;
-    final String name;
-    final int year;
-    String color;
+    public final String model;
+    public final String producer;
+    public final int year;
+    public Double millage;
+    private Double value;
 
-    public Car(String model, String producer, String name, int year, String color) {
+    public Car(String model, String producer, int year, Double millage, Double value) {
         this.model = model;
         this.producer = producer;
-        this.name = name;
         this.year = year;
-        this.color = color;
+        this.millage = millage;
+        this.value = value;
+    }
+
+    public Double getValue() {
+        return value;
     }
 
 }
