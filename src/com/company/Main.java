@@ -11,35 +11,37 @@ public class Main {
         System.out.println( "producer = "  + iphone.producer);
         System.out.println( "name = " + dog.name);
 
-        System.out.println(dog.showPetWeight());
-        dog.feed();
-        System.out.println(dog.showPetWeight());
+//        System.out.println(dog.showPetWeight());
+//        dog.feed();
+//        System.out.println(dog.showPetWeight());
+//
+//        do{
+//            dog.takeForAWalk();
+//            System.out.println(dog.showPetWeight());
+//        }while(dog.isAlive);
 
-        do{
-            dog.takeForAWalk();
-            System.out.println(dog.showPetWeight());
-        }while(dog.isAlive);
-
-        Human me = new Human();
+        Human me = new Human("Maciej", "Laskowski",5415.3);
         me.mobilePhone = iphone;
         me.pet = dog;
-        Car Passat = new Car("B4", "Volkswagen","Passat",1997,"black");
-        me.car = Passat;
-        /*
-        typy proste nie są obiektami żadnej klasy
-        int i;
-        Integer ii = 5;
-        long l;
-        Long ll;
-        //...
-        boolean x;
-        float f;
-        double d;
-        char c;
-        short s;
 
-        ii.doubleValue();
-        */
+        Car passat = new Car("B4", "Volkswagen",1997,300000.0, 10000.0);
+        me.setCar(passat);
+
+        System.out.println(me.getSalary());
+        me.setSalary(-12.0);
+        me.setSalary(0.0);
+        System.out.println(me.getSalary());
+        me.setSalary(2000.0);
+        System.out.println(me.getSalary());
+        iphone.setScreenSize(2.0);
+
+        System.out.println("licznik: "+me.getCar().millage);
+
+        Car myPassat = me.getCar();
+        myPassat.millage = 150000.0;
+
+        System.out.println("licznik: "+myPassat.millage);
+
 
     }
 }
