@@ -1,5 +1,8 @@
 package com.company;
 
+import com.company.device.Car;
+import com.company.device.Phone;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -8,40 +11,45 @@ public class Main {
         Phone iphone = new Phone("apple", "65", "iOS", 5.5);
         dog.name = "Szarik";
 
-        System.out.println( "producer = "  + iphone.producer);
-        System.out.println( "name = " + dog.name);
+        System.out.println("producer = " + iphone.producer);
+        System.out.println("name = " + dog.name);
 
-//        System.out.println(dog.showPetWeight());
-//        dog.feed();
-//        System.out.println(dog.showPetWeight());
-//
-//        do{
-//            dog.takeForAWalk();
-//            System.out.println(dog.showPetWeight());
-//        }while(dog.isAlive);
-
-        Human me = new Human("Maciej", "Laskowski",5415.3);
+        Human me = new Human("Maciej", "Laskowski", 18, 5415.3);
         me.mobilePhone = iphone;
         me.pet = dog;
 
-        Car passat = new Car("B4", "Volkswagen",1997,300000.0, 10000.0);
+        Car passat = new Car("B4", "Volkswagen", 1997, 300000.0, 10000.0);
+        Car passat2 = new Car("B4", "Volkswagen", 1997, 300000.0, 10000.0);
         me.setCar(passat);
 
-        System.out.println(me.getSalary());
-        me.setSalary(-12.0);
-        me.setSalary(0.0);
-        System.out.println(me.getSalary());
-        me.setSalary(10000.0);
-        System.out.println(me.getSalary());
-        iphone.setScreenSize(2.0);
-
-        System.out.println("licznik: "+me.getCar().millage);
+        System.out.println("licznik: " + me.getCar().millage);
 
         Car myPassat = me.getCar();
-        myPassat.millage = 150000.0;
+        //myPassat.millage = 150000.0;
 
-        System.out.println("licznik: "+myPassat.millage);
+        System.out.println("licznik: " + me.getCar().millage);
 
+        System.out.println("If ==");
+        if (passat == passat2) {
+            System.out.println("Samochody są takie same.");
+        } else {
+            System.out.println("Samochody różnią się od siebie.");
+        }
+
+        System.out.println("Eqals:");
+
+        if (passat.equals(passat2)) {
+            System.out.println("Samochody są takie same.");
+        } else {
+            System.out.println("Samochody różnią się od siebie.");
+        }
+
+        System.out.println("Człowiek: " + me);
+        System.out.println("Dogo: " + dog);
+        System.out.println("Telefon: " + iphone);
+        System.out.println("Samochód: " + passat);
+        System.out.println("Samochód: " + myPassat);
+        System.out.println("Samochód: " + passat2);
 
     }
 }

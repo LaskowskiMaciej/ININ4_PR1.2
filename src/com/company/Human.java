@@ -1,21 +1,25 @@
 package com.company;
 
+import com.company.device.Car;
+import com.company.device.Phone;
+
 import java.util.Date;
 
 public class Human extends Animal{
     private static final String HUMAN_SPECIES = "homo sapiens";
     String firstName;
     String lastName;
-
+    Integer age;
     Animal pet;
     private Car car;
     Phone mobilePhone;
     private Double salary;
 
-    public Human(String firstName, String lastName, Double salary) {
+    public Human(String firstName, String lastName, Integer age, Double salary) {
         super(HUMAN_SPECIES);
         this.firstName = firstName;
         this.lastName = lastName;
+        this.age = age;
         this.salary = salary;
     }
 
@@ -58,5 +62,10 @@ public class Human extends Animal{
         else{
             System.out.println("ZAKUP AUTA: porażka, zmień pracę");
         }
+    }
+
+    @Override
+    public String toString() {
+        return this.firstName + " " + this.lastName + " " + this.age + "l";
     }
 }

@@ -80,4 +80,9 @@ public class Animal {
     Double showPetWeight() {
         return this.weight;
     }
+
+    @Override
+    public String toString() {
+        return this.name + " " + this.species + " " + this.weight;
+    }
 }

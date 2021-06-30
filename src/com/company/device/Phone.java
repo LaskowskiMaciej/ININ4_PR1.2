@@ -1,7 +1,7 @@
-package com.company;
+package com.company.device;
 
 public class Phone {
-    final String producer;
+    public final String producer;
     final String model;
     final String operationSystem;
     private Double screenSize;
@@ -23,5 +23,10 @@ public class Phone {
 
     public void setScreenSize(Double screenSize) {
         this.screenSize = screenSize;
+    }
+
+    @Override
+    public String toString() {
+        return this.producer + " " + this.model + " " + this.operationSystem  + " " + this.screenSize;
     }
 }
