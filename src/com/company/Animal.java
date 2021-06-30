@@ -2,7 +2,7 @@ package com.company;
 
 import java.io.File;
 
-public class Animal {
+public class Animal implements Salleable{
     final String species;
     public String name = "petname";
     private Double weight;
@@ -84,5 +84,38 @@ public class Animal {
     @Override
     public String toString() {
         return this.name + " " + this.species + " " + this.weight;
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+        if(seller.pet == null){
+            System.out.println("Nie ma dogo");
+        }
+        else {
+            System.out.println("Sprzedający posiada dogo.");
+            if(seller.getCash() < price){
+                System.out.println("Nie stać Cię na psa");
+            }
+            else {
+                System.out.println("Zwierze sprzedającego: " + seller.pet);
+                System.out.println("Zwierze kupującego: " + buyer.pet);
+                System.out.println("Stan konta sprzedającego przed tranzakcją: " + seller.getCash());
+                System.out.println("Stan konta kupującego przed tranzakcją: " + buyer.getCash());
+                seller.setCash(seller.getCash()+price);
+                buyer.setCash(buyer.getCash()-price);
+                System.out.println("Stan konta sprzedającego po tranzakcji: " + seller.getCash());
+                System.out.println("Stan konta kupująćego po transakcji: " + buyer.getCash());
+                Animal dogo = new Animal(seller.pet.species);
+                dogo.name = seller.pet.name;
+                dogo.isAlive = seller.pet.isAlive;
+                buyer.pet = dogo;
+                seller.pet = null;
+                System.out.println("Gratuluję nowej pociechy.");
+                System.out.println("Zwierze sprzedającego: " + seller.pet);
+                System.out.println("Zwierze kupującego: " + buyer.pet);
+
+            }
+        }
+
     }
 }

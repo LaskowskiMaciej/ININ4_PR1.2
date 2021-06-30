@@ -17,6 +17,10 @@ public class Main {
         Human me = new Human("Maciej", "Laskowski", 18, 5415.3);
         me.mobilePhone = iphone;
         me.pet = dog;
+        me.setCash(200.0);
+
+        Human buyer = new Human("Zdzisław", "Nowakowski", 30, 2800.0);
+        buyer.setCash(200.0);
 
         Car passat = new Car("B4", "Volkswagen", 1997, 300000.0, 10000.0);
         Car passat2 = new Car("B4", "Volkswagen", 1997, 300000.0, 10000.0);
@@ -54,5 +58,9 @@ public class Main {
         passat.turnOn();
         System.out.println();
         iphone.turnOn();
+
+        me.pet.sell(me, buyer, 100.0);
+        buyer.sell(buyer, me, 2.50);
+
     }
 }

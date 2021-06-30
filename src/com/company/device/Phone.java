@@ -1,6 +1,8 @@
 package com.company.device;
 
-public class Phone extends Device{
+import com.company.Human;
+
+public class Phone extends Device {
     final String operationSystem;
     private Double screenSize;
 
@@ -24,7 +26,7 @@ public class Phone extends Device{
 
     @Override
     public String toString() {
-        return this.producer + " " + this.model + " " + this.operationSystem  + " " + this.screenSize;
+        return this.producer + " " + this.model + " " + this.operationSystem + " " + this.screenSize;
     }
 
     @Override
@@ -33,5 +35,21 @@ public class Phone extends Device{
         System.out.println("Szukanie aktualizacji");
         System.out.println("Wszystko aktualne");
         System.out.println("Witaj");
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+        if (seller.getCar() == null) {
+            System.out.println("Brak telefonu");
+        } else {
+            System.out.println("Sprzedający posiada telefon.");
+        }
+        if (seller.getCash() < price) {
+            System.out.println("Nie stać Cię na srajfona");
+        } else {
+            System.out.println("Gratuluję teraz możesz się lansować nowym srajfonem.");
+            seller.setCash(seller.getCash() - price);
+            buyer.setCash(buyer.getCash() + price);
+        }
     }
 }

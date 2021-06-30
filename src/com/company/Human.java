@@ -5,7 +5,7 @@ import com.company.device.Phone;
 
 import java.util.Date;
 
-public class Human extends Animal{
+public class Human extends Animal {
     private static final String HUMAN_SPECIES = "homo sapiens";
     String firstName;
     String lastName;
@@ -14,6 +14,7 @@ public class Human extends Animal{
     private Car car;
     Phone mobilePhone;
     private Double salary;
+    private Double cash = 0.0;
 
     public Human(String firstName, String lastName, Integer age, Double salary) {
         super(HUMAN_SPECIES);
@@ -29,12 +30,11 @@ public class Human extends Animal{
         return this.salary;
     }
 
-    public void setSalary(Double salary){
+    public void setSalary(Double salary) {
 
-        if (salary < 0.0){
+        if (salary < 0.0) {
             System.out.println("Wal się, nie będę za darmo tego robił.");
-        }
-        else{
+        } else {
             System.out.println("dane wysłane do księgowego");
             System.out.println("koniecznie odbierz aneks od pani Hani z kadr");
             System.out.println("ZUS i US już o wszystkim wiedzdą");
@@ -51,15 +51,13 @@ public class Human extends Animal{
     }
 
     public void setCar(Car car) {
-        if(this.salary>= car.getValue()){
+        if (this.salary >= car.getValue()) {
             System.out.println("Możesz kupić samochód za gotówkę!");
             this.car = car;
-        }
-        else if(this.salary> car.getValue()/12.0){
+        } else if (this.salary > car.getValue() / 12.0) {
             System.out.println("ZAKUP AUTA: nie aż takie gratulacje, kupiłeś na kredyt :/");
             this.car = car;
-        }
-        else{
+        } else {
             System.out.println("ZAKUP AUTA: porażka, zmień pracę");
         }
     }
@@ -67,5 +65,18 @@ public class Human extends Animal{
     @Override
     public String toString() {
         return this.firstName + " " + this.lastName + " " + this.age + "l";
+    }
+
+    public Double getCash() {
+        return cash;
+    }
+
+    public void setCash(Double cash) {
+        this.cash = cash;
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+        throw new RuntimeException("Zakaz handlu ludźmi");
     }
 }
