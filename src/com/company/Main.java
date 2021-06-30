@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
         Animal dog = new Animal("speciesB");
-        Phone iphone = new Phone("apple", "65", "iOS", 5.5);
+        Phone iphone = new Phone("apple", "65", "iOS", 5.5, 2019);
         dog.name = "Szarik";
 
         System.out.println("producer = " + iphone.producer);
@@ -51,5 +51,8 @@ public class Main {
         System.out.println("Samochód: " + myPassat);
         System.out.println("Samochód: " + passat2);
 
+        passat.turnOn();
+        System.out.println();
+        iphone.turnOn();
     }
 }

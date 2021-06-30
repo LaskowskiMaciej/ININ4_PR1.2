@@ -45,7 +45,7 @@ public class Human extends Animal{
     public Car getCar() {
         return new Car(this.car.model,
                 this.car.producer,
-                this.car.year,
+                this.car.productionYear,
                 this.car.millage,
                 this.car.getValue());
     }
