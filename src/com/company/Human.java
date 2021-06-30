@@ -1,16 +1,17 @@
 package com.company;
 
+import com.company.creatures.Animal;
 import com.company.device.Car;
 import com.company.device.Phone;
 
 import java.util.Date;
 
 public class Human extends Animal {
-    private static final String HUMAN_SPECIES = "homo sapiens";
+    public static final String HUMAN_SPECIES = "homo sapiens";
     String firstName;
     String lastName;
     Integer age;
-    Animal pet;
+    public Animal pet;
     private Car car;
     Phone mobilePhone;
     private Double salary;

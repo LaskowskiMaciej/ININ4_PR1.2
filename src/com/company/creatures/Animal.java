@@ -1,16 +1,19 @@
-package com.company;
+package com.company.creatures;
+
+import com.company.Human;
+import com.company.Salleable;
 
 import java.io.File;
 
-public class Animal implements Salleable{
-    final String species;
+abstract public class Animal implements Salleable, Feedable {
+    public final String species;
     public String name = "petname";
     private Double weight;
     File pic;
     public static final Double DEFAULT_ANIMAL_WEIGHT = 1.0D;
     Boolean isAlive = true;
 
-    Animal(String species) {
+    public Animal(String species) {
         this.species = species;
         this.defaultWeight(species);
     }
@@ -42,15 +45,15 @@ public class Animal implements Salleable{
                 this.weight = 10.0D;
                 break;
             case 2:
-                this.weight = 15.0D;
+                this.weight = 150.0D;
                 break;
             default:
                 this.weight = DEFAULT_ANIMAL_WEIGHT;
         }
 
     }
-
-    void feed() {
+    @Override
+    public void feed() {
         if (this.isAlive) {
             Double var1 = this.weight;
             this.weight = this.weight + 1.0D;
@@ -59,6 +62,20 @@ public class Animal implements Salleable{
             System.out.println("The pet is dead ;(");
         }
 
+    }
+
+    @Override
+    public void feed(Double foodWeight) {
+        if (this.isAlive) {
+            System.out.println("Waga przed karmieniem: " + this.weight);
+            Double var1 = this.weight;
+            this.weight = this.weight + foodWeight;
+            System.out.println("thx for food");
+            System.out.println("Waga po karmieniu: " + this.weight);
+
+        } else {
+            System.out.println("The animal is dead ;(");
+        }
     }
 
     void takeForAWalk() {
@@ -105,7 +122,7 @@ public class Animal implements Salleable{
                 buyer.setCash(buyer.getCash()-price);
                 System.out.println("Stan konta sprzedającego po tranzakcji: " + seller.getCash());
                 System.out.println("Stan konta kupująćego po transakcji: " + buyer.getCash());
-                Animal dogo = new Animal(seller.pet.species);
+                Pet dogo = new Pet(seller.pet.species);
                 dogo.name = seller.pet.name;
                 dogo.isAlive = seller.pet.isAlive;
                 buyer.pet = dogo;

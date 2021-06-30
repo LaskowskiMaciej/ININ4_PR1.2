@@ -1,5 +1,8 @@
 package com.company;
 
+import com.company.creatures.Animal;
+import com.company.creatures.FarmAnimal;
+import com.company.creatures.Pet;
 import com.company.device.Car;
 import com.company.device.Phone;
 
@@ -7,9 +10,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Animal dog = new Animal("speciesB");
+        Pet dog = new Pet("speciesB");
         Phone iphone = new Phone("apple", "65", "iOS", 5.5, 2019);
         dog.name = "Szarik";
+
+        FarmAnimal pig = new FarmAnimal("speciesC");
 
         System.out.println("producer = " + iphone.producer);
         System.out.println("name = " + dog.name);
@@ -19,6 +24,10 @@ public class Main {
         me.pet = dog;
         me.setCash(200.0);
 
+        pig.feed(20.0);
+        pig.beEaten();
+
+        /*
         Human buyer = new Human("Zdzisław", "Nowakowski", 30, 2800.0);
         buyer.setCash(200.0);
 
@@ -62,5 +71,6 @@ public class Main {
         me.pet.sell(me, buyer, 100.0);
         buyer.sell(buyer, me, 2.50);
 
+        */
     }
 }
