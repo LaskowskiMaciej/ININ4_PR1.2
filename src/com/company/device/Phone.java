@@ -45,7 +45,7 @@ public class Phone extends Device {
 
     @Override
     public void sell(Human seller, Human buyer, Double price) {
-        if (seller.getCar() == null) {
+        if (seller.mobilePhone == null) {
             System.out.println("Brak telefonu");
         } else {
             System.out.println("Sprzedający posiada telefon.");

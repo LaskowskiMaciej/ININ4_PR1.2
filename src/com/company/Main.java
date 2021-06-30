@@ -4,7 +4,10 @@ import com.company.creatures.Animal;
 import com.company.creatures.FarmAnimal;
 import com.company.creatures.Pet;
 import com.company.device.Car;
+import com.company.device.CarComparator;
 import com.company.device.Phone;
+
+import java.util.Arrays;
 
 public class Main {
 
@@ -31,11 +34,21 @@ public class Main {
         Human buyer = new Human("Zdzisław", "Nowakowski", 30, 2800.0);
         buyer.setCash(200.0);
 
-        Car passat = new Eletric("B4", "Volkswagen", 1997, 300000.0, 10000.0);
-        Car passat2 = new Eletric("B4", "Volkswagen", 1997, 300000.0, 10000.0);
-        me.setCar(passat);
+        Car passat = new Car("B1", "Volkswagen", 1997, 300000.0, 10000.0);
+        Car passat2 = new Car("B2", "Volkswagen", 1998, 300000.0, 10000.0);
+        Car passat3 = new Car("B3", "Volkswagen", 1999, 300000.0, 10000.0);
+        Car passat4 = new Car("B4", "Volkswagen", 2000, 300000.0, 10000.0);
+        me.setCar(passat, 0);
+        me.setCar(passat2, 1);
+        me.setCar(passat3, 2);
+        me.setCar(passat4, 3);
 
-        passat.refuel();
+        System.out.println(Arrays.deepToString(me.garage));
+
+        Arrays.sort(me.garage, new CarComparator());
+
+        System.out.println(Arrays.deepToString(me.garage));
+
         /*
         System.out.println("licznik: " + me.getCar().millage);
 
