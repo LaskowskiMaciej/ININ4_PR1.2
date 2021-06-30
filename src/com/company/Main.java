@@ -31,7 +31,7 @@ public class Main {
         me.setSalary(-12.0);
         me.setSalary(0.0);
         System.out.println(me.getSalary());
-        me.setSalary(2000.0);
+        me.setSalary(10000.0);
         System.out.println(me.getSalary());
         iphone.setScreenSize(2.0);
 
