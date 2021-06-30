@@ -2,7 +2,7 @@ package com.company.device;
 
 import com.company.Human;
 
-public class Car extends Device{
+public abstract class Car extends Device{
     public Double millage;
     private Double value;
 
@@ -52,4 +52,6 @@ public class Car extends Device{
             buyer.setCash(buyer.getCash()+price);
         }
     }
+
+    public abstract void refuel();
 }

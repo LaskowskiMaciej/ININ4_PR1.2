@@ -27,14 +27,16 @@ public class Main {
         pig.feed(20.0);
         pig.beEaten();
 
-        /*
+
         Human buyer = new Human("Zdzisław", "Nowakowski", 30, 2800.0);
         buyer.setCash(200.0);
 
-        Car passat = new Car("B4", "Volkswagen", 1997, 300000.0, 10000.0);
-        Car passat2 = new Car("B4", "Volkswagen", 1997, 300000.0, 10000.0);
+        Car passat = new Eletric("B4", "Volkswagen", 1997, 300000.0, 10000.0);
+        Car passat2 = new Eletric("B4", "Volkswagen", 1997, 300000.0, 10000.0);
         me.setCar(passat);
 
+        passat.refuel();
+        /*
         System.out.println("licznik: " + me.getCar().millage);
 
         Car myPassat = me.getCar();
@@ -63,14 +65,13 @@ public class Main {
         System.out.println("Samochód: " + passat);
         System.out.println("Samochód: " + myPassat);
         System.out.println("Samochód: " + passat2);
-
         passat.turnOn();
         System.out.println();
         iphone.turnOn();
 
         me.pet.sell(me, buyer, 100.0);
         buyer.sell(buyer, me, 2.50);
-
         */
+
     }
 }

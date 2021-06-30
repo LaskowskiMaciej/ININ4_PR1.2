@@ -2,9 +2,15 @@ package com.company.device;
 
 import com.company.Human;
 
+import java.net.URL;
+import java.util.List;
+
 public class Phone extends Device {
     final String operationSystem;
     private Double screenSize;
+    static final String serverAdress =  "adresServera.pl";
+    static final String protocol = "https";
+    static final Double version = 1.0;
 
     public Phone(String producer, String model, String operationSystem, Double screenSize, Integer productionYear) {
         super(producer, model, productionYear);
@@ -51,5 +57,20 @@ public class Phone extends Device {
             seller.setCash(seller.getCash() - price);
             buyer.setCash(buyer.getCash() + price);
         }
+    }
+    public void installAnApp(String appName){
+
+    }
+    public void installAnApp(String appName, Double version){
+
+    }
+    public void installAnApp(String appName, Double version, String serverAdress){
+
+    }
+    public void installAnApp(List<String> appsName){
+
+    }
+    public void installAnApp(URL url){
+
     }
 }
