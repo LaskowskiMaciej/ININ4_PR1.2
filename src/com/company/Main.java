@@ -32,12 +32,16 @@ public class Main {
 
 
         Human buyer = new Human("Zdzisław", "Nowakowski", 30, 2800.0);
-        buyer.setCash(200.0);
+        buyer.setCash(200000.0);
 
         Car passat = new Car("B1", "Volkswagen", 1997, 300000.0, 10000.0);
         Car passat2 = new Car("B2", "Volkswagen", 1998, 300000.0, 10000.0);
         Car passat3 = new Car("B3", "Volkswagen", 1999, 300000.0, 10000.0);
         Car passat4 = new Car("B4", "Volkswagen", 2000, 300000.0, 10000.0);
+
+        passat4.wasAnOwner();
+
+        passat.transactionNumbers();
         me.setCar(passat, 0);
         me.setCar(passat2, 1);
         me.setCar(passat3, 2);
@@ -48,6 +52,17 @@ public class Main {
         Arrays.sort(me.garage, new CarComparator());
 
         System.out.println(Arrays.deepToString(me.garage));
+        Car carToSell = me.getCar(0);
+        carToSell.transactionNumbers();
+        carToSell.doAsellB(me, buyer);
+        try {
+            carToSell.sell(me, buyer, 15000.0);
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        carToSell.transactionNumbers();
+        carToSell.doAsellB(me, buyer);
 
         /*
         System.out.println("licznik: " + me.getCar().millage);
